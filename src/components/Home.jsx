@@ -20,6 +20,7 @@ const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
         axios.get(url).then((response) => {
             setData(response.data);
+            console.log(data);
             setWord(response.data[0].word);
             wordSearchInput.value = word;
             return data;
@@ -56,7 +57,7 @@ wordSearchInput.value = '';
                 <div className='absolute top-0 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.75)] rounded-[15px] z-0'></div>
 
                 {data[0] ? <h1 className='absolute mb-[160px] md:mb-[130px] bold' id='wordName'>{data[0].word[0].toUpperCase() + data[0].word.slice(1)}</h1> : null}
-                {data[0] ? <p className='z-[999] mt-6 text-xl italic' id='partOfSpeech'>{data[0].meanings[0].partOfSpeech[0].toUpperCase() + data[0].meanings[0].partOfSpeech.slice(1)}</p> : null}
+                {data[0] ? <p className='z-[999] mt-14 text-xl italic' id='partOfSpeech'>{data[0].meanings[0].partOfSpeech[0].toUpperCase() + data[0].meanings[0].partOfSpeech.slice(1)}</p> : null}
                 {data[0] ? <p className='z-[999] mt-5' id='definition'>{data[0].meanings[0].definitions[0].definition}</p> : null}
 
             </div> : null}
