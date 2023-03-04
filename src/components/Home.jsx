@@ -46,8 +46,8 @@ wordSearchInput.value = '';
         <h1 className='text-green-400 text-[70px] md:text-[110px] text-center mt-5 md:mt-4 transition'>word_search.</h1>
         <p className='text-center text-white text-[25px] md:text-[45px]'>Find the definition of<span className='text-gray-500'>..<Typed strings={['Onomatopoeia','Acquiesce','Enervate','Quotidian','Vociferous']} typeSpeed={60} backSpeed={60} loop></Typed><span/></span></p>
         <div className='w-full h-40 bg-black flex'>
-            <div className='m-auto' action="/">
-                <input onChange={e => setWord(e.target.value)} id='wordSearchInput' className='w-80 h-10 rounded justify-self-center pl-4 text-xl'type="text" placeholder='find a word definition'/>
+            <div className='m-auto w-full flex flex-wrap justify-center' action="/">
+                <input onChange={e => setWord(e.target.value)} id='wordSearchInput' className='w-80 h-10 rounded justify-self-center pl-4 text-xl mb-3'type="text" placeholder='find a word definition'/>
                 <button type = "submit" onClick={searchWord} id='wordSearchBtn' className='w-[100px] h-10 rounded bg-green-400 ml-4 font-bold text-xl'>Define</button>
             </div>
         </div>
